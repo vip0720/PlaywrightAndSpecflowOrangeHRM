@@ -1,10 +1,17 @@
+using Microsoft.Playwright;
+using PageObjectModel.Flows;
+using PageObjectModel.Pages;
+using PlayWrightSpecFlow.Common;
 using TechTalk.SpecFlow;
 
-namespace OrangeHRM.StepDefinitions
+namespace PlayWrightSpecFlow.StepDefinitions
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions
+    public sealed class CalculatorStepDefinitions: Hooks1
     {
+        LoginPage lPage = new LoginPage(page);
+        LoginFlow lFlow = new LoginFlow(lPage);
+
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
         [Given("the first number is (.*)")]
@@ -42,5 +49,24 @@ namespace OrangeHRM.StepDefinitions
 
             throw new PendingStepException();
         }
+
+        [Given(@"Launch the orangehrmlive website")]
+        public void GivenLaunchTheGoogleWebsite()
+        {
+            
+        }
+
+        [When(@"Search for '([^']*)'")]
+        public void WhenSearchFor(string arsenal)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"User is able to see results for Arsenal")]
+        public void ThenUserIsAbleToSeeResultsForArsenal()
+        {
+            throw new PendingStepException();
+        }
+
     }
 }
